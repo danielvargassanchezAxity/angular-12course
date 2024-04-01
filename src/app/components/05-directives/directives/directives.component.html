@@ -1,0 +1,41 @@
+<div class="card">
+    <h1>Directivas</h1>
+    <h2>Estructurales</h2>
+    <div class="separator">
+        <p>NgIf:</p>
+        <button (click)="showMessage = !showMessage">{{ showMessage ? 'Hide': 'Show'}}</button>
+        <div *ngIf="showMessage">
+            <p>Hola que tal este mensaje debe mostrarse cuando showMessage sea true</p>
+        </div>
+    </div>
+    <div class="separator">
+        <p>NgFor:</p>
+        <ul>
+            <li *ngFor="let product of products; index as i">{{ i }}: {{ product }}</li>
+        </ul>
+    </div>
+
+    <div class="separator">
+        <p>NgSwich</p>
+        <select [(ngModel)]="selectedoption">
+            <option value="fruits">Frutas</option>
+            <option value="vegetables">Verduras</option>
+        </select>
+
+        <div [ngSwitch]="selectedoption">
+            <div *ngSwitchCase="'fruits'">
+                <h2>Lista de Frutas</h2>
+                <ul>
+                    <li *ngFor="let fruit of fruits">{{ fruit }}</li>
+                </ul>
+            </div>
+            <div *ngSwitchCase="'vegetables'">
+                <h2>Lista de Verduras</h2>
+                <ul>
+                    <li *ngFor="let vegetable of vegetables">{{ vegetable }}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

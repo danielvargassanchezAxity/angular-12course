@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #e8e8e8;
+    padding: 20px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    size: 14px;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+    margin-top: 20px;
+    box-shadow: 10px 10px 5px 0px rgba(199, 199, 199, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(199, 199, 199, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(199, 199, 199, 0.75);
+    padding: 10px 20px;
+    background-color: white;
+    h2 {
+        border-bottom: 1px solid #d3d3d3;
+        padding-bottom: 20px;
+    }
+    .separator {
+        border-top: 1px solid #d3d3d3;
+        padding: 5px 0;
+    }
+    .separator:first-of-type {
+        border-top: 1px solid white !important;
+    }
+}
+.text-bold {
+    font-weight: bold;
+}
+.test {
+    background-color: orange;
+}
+button:disabled {
+    background-color: aqua;
+}
+.d-flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
