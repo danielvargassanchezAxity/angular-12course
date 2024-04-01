@@ -1,3 +1,14 @@
+<!-- 
+    primero definimos el componente esto no se va a renderizar todavia
+-->
+<ng-template #userInfoTemplate let-name="name" let-age="age">
+    <div>
+        <p>Nombre de usuario: {{ name }}</p>
+        <p>Edad: {{ age }}</p>
+    </div>
+</ng-template>
+
+
 <div class="card">
     <h1>Directivas</h1>
     <h2>Estructurales</h2>
@@ -37,5 +48,40 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="separator">
+        <p>ngTemplateOutlet</p>
+        <p>Te permite insertar dinámicamente un template en otro lugar</p>
+
+        <ng-container *ngFor="let user of users">
+            <ng-container
+                *ngTemplateOutlet="userInfoTemplate; context: {name: user.name, age: user.age}"></ng-container>
+        </ng-container>
+    </div>
+</div>
+
+
+<div class="card">
+    <h2>De atributos</h2>
+    <div class="separator">
+        <p>NgClass:</p>
+        <button (click)="isWarning = !isWarning">Change to {{ !isWarning ? 'Danger': 'Success'}}</button>
+        <div class="message" [ngClass]="{'danger': isWarning, 'success': !isWarning}">
+            <p>Ejemplo de un ng class para alerta</p>
+        </div>
+    </div>
+
+    <div class="separator">
+        <p>NgStyle:</p>
+        <button (click)="isWarning = !isWarning">Change to {{ !isWarning ? 'Danger': 'Success'}}</button>
+        <div class="message" [ngStyle]="{'background-color': isWarning ? '#dc3545':'#07923a', 'color':'white'}">
+            <p>Ejemplo de un ng style para alerta</p>
+        </div>
+    </div>
+
+    <div class="separator">
+        <p>NgDisabled:</p>
+        <button [disabled]="isWarning">Click me!</button>
     </div>
 </div>

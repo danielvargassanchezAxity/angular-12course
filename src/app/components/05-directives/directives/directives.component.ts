@@ -12,6 +12,25 @@ export class DirectivesComponent implements OnInit {
   vegetables = ['Zanahoria', 'Lechuga', 'Brocoli'];
   fruits = ['Manzana', 'Pera', 'Platano'];
   selectedoption = 'fruits';
+  users = [
+    {
+      userId: 0,
+      name: "Daniel",
+      age: 27,
+    },
+    {
+      userId: 1,
+      name: "Erika",
+      age: 21,
+    },
+    {
+      userId: 2,
+      name: "Pedro",
+      age: 30,
+    },
+  ];
+
+  isWarning = false;
   constructor() { }
 
   ngOnInit(): void {
