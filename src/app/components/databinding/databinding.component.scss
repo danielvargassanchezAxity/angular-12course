@@ -1,0 +1,23 @@
+.gray-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+    size: 14px;
+    .separator {
+        border: 1px solid #d3d3d3;
+        border-radius: 5px;
+        background-color: white;
+        padding: 10px;
+    }
+    gap: 20px;
+    padding: 20px;
+}
+.text-bold {
+    font-weight: bold;
+}
+.test {
+    background-color: orange;
+}
+button:disabled {
+    background-color: aqua;
+}

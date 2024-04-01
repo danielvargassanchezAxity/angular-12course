@@ -1,0 +1,29 @@
+<div class="gray-content">
+    <div class="separator">
+        <p>Data desde el ts:</p>
+        <p> <span class="text-bold">Interpolacion:</span> "{{interpolation}}"</p>
+    </div>
+
+    <div class="separator">
+        <div [class]="className">
+            <p>Enlace de propiedades, ejemplo en un div</p>
+        </div>
+        <button [disabled]="buttonDisabled">  {{ buttonDisabled ? 'Im disabled':'click me!' }}</button>
+    </div>
+
+
+
+    <div class="separator">
+        <p>Enlace de eventos</p>
+        <button (click)="changeStatus()">Change button status</button>
+    </div>
+
+
+    <div class="separator">
+        <p>Enlace bi direccional</p>
+        <input type="text" [(ngModel)]="inputValue">  <button (click)="clear()">clear</button>
+        <p>Valor: {{ inputValue }}</p>
+    </div>
+    
+
+</div>
