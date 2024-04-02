@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FirstPageComponent } from './components/09-lazy-loading/first-page/first-page.component';
+import { CanActiveTestComponent } from './components/10-guards/can-active-test/can-active-test.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FirstPageComponent } from './components/09-lazy-loading/first-page/firs
     DirectivesComponent,
     UsersComponent,
     CreateComponent,
+    CanActiveTestComponent,
   ],
   imports: [
     BrowserModule,

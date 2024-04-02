@@ -6,6 +6,7 @@ import { ParentComponent } from './components/03-componentes-comunication/parent
 import { PipesComponent } from './components/05-pipes/pipes/pipes.component';
 import { DirectivesComponent } from './components/06-directives/directives/directives.component';
 import { UsersComponent } from './components/07-services/users/users.component';
+import { CanActiveTestComponent } from './components/10-guards/can-active-test/can-active-test.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'lazy',
     loadChildren: () => import("./components/09-lazy-loading/first-page/first-page.module").then(m => m.FirstPageModule)
+  },
+  {
+    path: 'guards',
+    component: CanActiveTestComponent
   }
 ];
 
