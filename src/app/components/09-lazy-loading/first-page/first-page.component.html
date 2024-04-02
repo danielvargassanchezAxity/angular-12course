@@ -1,0 +1,11 @@
+<div class="card">
+    <h1>Este es el lazy loading</h1>
+    <div class="separator">
+        <mat-form-field class="w-100">
+            <mat-label>Este componente no está cargado en los demás modulos</mat-label>
+            <mat-select multiple>
+                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+</div>

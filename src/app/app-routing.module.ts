@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: 'crud',
     component: UsersComponent
+  },
+  {
+    path: 'lazy',
+    loadChildren: () => import("./components/09-lazy-loading/first-page/first-page.module").then(m => m.FirstPageModule)
   }
 ];
 
