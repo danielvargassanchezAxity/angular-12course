@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/01-component/first/first.component';
 import { DatabindingComponent } from './components/02-databinding/databinding/databinding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentComponent } from './components/03-componentes-comunication/parent/parent.component';
 import { ChildComponent } from './components/03-componentes-comunication/child/child.component';
-import { PipesComponent } from './components/04-pipes/pipes/pipes.component';
-import { CreditCardPipe } from './components/04-pipes/credit-card.pipe';
-import { DirectivesComponent } from './components/05-directives/directives/directives.component';
+import { PipesComponent } from './components/05-pipes/pipes/pipes.component';
+import { CreditCardPipe } from './components/05-pipes/credit-card.pipe';
+import { DirectivesComponent } from './components/06-directives/directives/directives.component';
+import { UsersComponent } from './components/07-services/users/users.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './components/08-forms/create/create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,12 +27,19 @@ import { DirectivesComponent } from './components/05-directives/directives/direc
     ChildComponent,
     PipesComponent,
     CreditCardPipe,
-    DirectivesComponent
+    DirectivesComponent,
+    UsersComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

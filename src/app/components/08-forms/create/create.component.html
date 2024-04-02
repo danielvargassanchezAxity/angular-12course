@@ -1,0 +1,32 @@
+<form [formGroup]="form" class="form-content">
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Ex. john doe">
+        <mat-error *ngIf="form.get('name')?.hasError('required')">Nombre <strong>requerido</strong></mat-error>
+        <mat-error *ngIf="form.get('name')?.hasError('minlength')">Minimo 5 <strong>caracteres</strong></mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Ex. test@test.com">
+        <mat-error *ngIf="form.get('email')?.hasError('required')">Email <strong>requerido</strong></mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('email')">Email <strong>inválido</strong></mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input type="tel" matInput formControlName="phone" placeholder="Ex. 2233445566">
+        <mat-error *ngIf="form.get('phone')?.hasError('required')">Teléfono <strong>requerido</strong></mat-error>
+        <mat-error *ngIf="form.get('phone')?.hasError('pattern')">Teléfono <strong>inválido</strong></mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Url de la imagen</mat-label>
+        <input type="url" matInput formControlName="imageUrl" placeholder="Ex. http://miiamge.com/image.png">
+        <mat-error *ngIf="form.get('imageUrl')?.hasError('required')">Url <strong>requerida</strong></mat-error>
+        <mat-error *ngIf="form.get('imageUrl')?.hasError('maxlength')">Máximo <strong>100 caracteres</strong></mat-error>
+    </mat-form-field>
+    <div class="button-container">
+        <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="save()">Save</button>
+    </div>
+</form>

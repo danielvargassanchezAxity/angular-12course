@@ -2,6 +2,7 @@
 body {
     background-color: #e8e8e8;
     padding: 20px;
+    color: black;
 }
 .card {
     display: flex;
@@ -42,3 +43,13 @@ button:disabled {
 .flex-column {
     flex-direction: column;
 }
+.card-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+img {
+    max-width: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
