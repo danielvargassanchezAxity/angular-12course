@@ -1,7 +1,7 @@
 <div class="card">
     <h1>Users crud</h1>
     <div>
-        <app-create (dataCreated)="save($event)"></app-create>
+        <app-create (dataCreated)="save($event)" [userSelected]="selectedUser"></app-create>
     </div>
     <div class="separator">
         <div class="card-container">
@@ -10,7 +10,11 @@
                     <div class="image-container">
                         <img [src]="user.image" alt="user image">
                     </div>
-                    <h3>id: {{user.id}} {{ user.name }}</h3>
+                    <div class="d-flex gap-15">
+                        <h3>id: {{user.id}} {{ user.name }}</h3>
+                        <mat-icon class="cursor-pointer red-icon" (click)="delete(user)">delete</mat-icon>
+                        <mat-icon class="cursor-pointer" (click)="selectUserToEdit(user)">edit</mat-icon>
+                    </div>
                 </div>
 
                 <div>

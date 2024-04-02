@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
+import { BaseUser, User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class UsersComponent implements OnInit {
 
   users: User[] = [];
+  selectedUser = new User();
   constructor(private userService: UsersService) { }
 
   ngOnInit(): void {
@@ -24,15 +25,33 @@ export class UsersComponent implements OnInit {
 
   save(user: User): void {
     if (user.id === null) {
-      user.id = this.getRandomNumber(1, 123123123123);
       this.createUser(user);
     } else {
-
+      this.edit(user);
     }
   }
 
   createUser(user: User): void {
-    this.userService.createUser(user).subscribe(res => {
+    const { id, ...baseUserData } = user;
+    const baseUser = new BaseUser();
+    Object.assign(baseUser, baseUserData);
+    this.userService.createUser(baseUser).subscribe(res => {
+      this.getUsers();
+    });
+  }
+  
+  delete(user: User): void {
+    this.userService.deleteUser(user.id ?? '').subscribe( () =>{
+      this.getUsers();
+    });
+  }
+
+  selectUserToEdit(user: User): void {
+    this.selectedUser = user;
+  }
+
+  edit(user: User): void {
+    this.userService.editUser(user).subscribe( () =>{
       this.getUsers();
     });
   }

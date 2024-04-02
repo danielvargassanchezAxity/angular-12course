@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../models/user.model';
+import { BaseUser, User } from '../models/user.model';
 import { Endpoints } from 'src/environments/endpoints';
 
 @Injectable({
@@ -16,7 +16,15 @@ export class UsersService {
     return this.httpClient.get<User[]>(Endpoints.users);
   }
 
-  createUser(user: User): Observable<User> {
+  createUser(user: BaseUser): Observable<User> {
     return this.httpClient.post<User>(Endpoints.users, user); 
+  }
+  
+  editUser(user: User): Observable<User> {
+    return this.httpClient.put<User>(`${Endpoints.users}/${user.id}`, user); 
+  }
+
+  deleteUser(userId: string): Observable<void> {
+    return this.httpClient.delete<void>(`${Endpoints.users}/${userId}`); 
   }
 }

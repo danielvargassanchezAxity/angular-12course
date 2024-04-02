@@ -1,14 +1,19 @@
-export class User {
-    id: number | null;
+export class BaseUser {
     name: string;
     email: string;
     phone: string;
     image: string;
     constructor() {
-        this.id = null;
         this.name = '';
         this.email = '';
         this.phone = '';
         this.image = '';
+    }
+}
+export class User extends BaseUser {
+    id: string | null;
+    constructor() {
+        super();
+        this.id = null;
     }
 }

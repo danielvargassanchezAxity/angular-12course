@@ -1,3 +1,5 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color: #e8e8e8;
@@ -51,5 +53,9 @@ button:disabled {
 img {
     max-width: 100%;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.cursor-pointer {
+    cursor: pointer;
+}
+.gap-15 {
+    gap: 15px;
+}
