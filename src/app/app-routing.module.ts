@@ -7,6 +7,8 @@ import { PipesComponent } from './components/05-pipes/pipes/pipes.component';
 import { DirectivesComponent } from './components/06-directives/directives/directives.component';
 import { UsersComponent } from './components/07-services/users/users.component';
 import { CanActiveTestComponent } from './components/10-guards/can-active-test/can-active-test.component';
+import { ProtectedComponent } from './components/10-guards/protected/protected.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -40,6 +42,11 @@ const routes: Routes = [
   {
     path: 'guards',
     component: CanActiveTestComponent
+  },
+  {
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

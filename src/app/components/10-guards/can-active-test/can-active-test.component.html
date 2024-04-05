@@ -1,3 +1,9 @@
 <div class="card">
     <h1>Guards en angular</h1>
+    <div class="button-container">
+        <p>Estatus: {{ !isAuth ? 'Loggeado': 'No loggeado'}}</p>
+        <button mat-flat-button color="primary" (click)="changeAuth()">Cambiar estatus</button>
+
+        <p class="cursor-pointer" (click)="goToProtectedRoute()">Ir a pagina protegida</p>
+    </div>
 </div>
