@@ -9,6 +9,8 @@ import { UsersComponent } from './components/07-services/users/users.component';
 import { CanActiveTestComponent } from './components/10-guards/can-active-test/can-active-test.component';
 import { ProtectedComponent } from './components/10-guards/protected/protected.component';
 import { AuthGuard } from './guards/auth.guard';
+import { UserIdComponent } from './components/11-resolver/user/user-id.component';
+import { UserResolver } from './services/user.resolver';
 
 const routes: Routes = [
   {
@@ -47,6 +49,13 @@ const routes: Routes = [
     path: 'protected',
     component: ProtectedComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'resolver/:id',
+    component: UserIdComponent,
+    resolve: {
+      user: UserResolver
+    }
   }
 ];
 

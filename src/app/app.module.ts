@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CanActiveTestComponent } from './components/10-guards/can-active-test/can-active-test.component';
+import { UserIdComponent } from './components/11-resolver/user/user-id.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CanActiveTestComponent } from './components/10-guards/can-active-test/c
     UsersComponent,
     CreateComponent,
     CanActiveTestComponent,
+    UserIdComponent,
   ],
   imports: [
     BrowserModule,

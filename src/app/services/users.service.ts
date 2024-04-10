@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { BaseUser, User } from '../models/user.model';
 import { Endpoints } from 'src/environments/endpoints';
 
@@ -8,8 +8,6 @@ import { Endpoints } from 'src/environments/endpoints';
   providedIn: 'root'
 })
 export class UsersService {
-
-  // importar el modulo en el app module
   constructor(private httpClient: HttpClient) { }
 
   getUsers(): Observable<User[]> {
@@ -26,5 +24,9 @@ export class UsersService {
 
   deleteUser(userId: string): Observable<void> {
     return this.httpClient.delete<void>(`${Endpoints.users}/${userId}`); 
+  }
+
+  getById(id: string): Observable<User> {
+    return this.httpClient.get<User>(`${Endpoints.users}/${id}`);
   }
 }

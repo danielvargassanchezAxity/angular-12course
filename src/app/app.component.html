@@ -9,6 +9,9 @@
     <a routerLink="/crud">Servicios y formularios</a>
     <a routerLink="/lazy">Lazy loading</a>
     <a routerLink="/guards">Guards</a>
+
+    <input type="text" [(ngModel)]="userId">
+    <a [routerLink]="'/resolver/'+userId">Go to user</a>
   </div>
 
   <router-outlet></router-outlet>
